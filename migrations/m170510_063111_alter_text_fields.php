@@ -2,7 +2,7 @@
 
 use yii\db\Schema;
 use yii\db\Migration;
-use nterms\mailqueue\MailQueue;
+use jako\mailqueue\MailQueue;
 
 class m170510_063111_alter_text_fields extends Migration {
 

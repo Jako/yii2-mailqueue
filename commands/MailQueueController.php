@@ -6,7 +6,7 @@
  * @author Rochdi B. <rochdi80tn@gmail.com>
  */
 
-namespace nterms\mailqueue\commands;
+namespace jako\mailqueue\commands;
 
 use yii\console\Controller;
 
@@ -20,9 +20,9 @@ class MailQueueController extends Controller
 {
     
     public $defaultAction = 'process';
-      
+
     /**
-     * This command processes the mail queue     
+     * This command processes the mail queue
      */
     public function actionProcess()
     {
