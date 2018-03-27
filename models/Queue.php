@@ -1,16 +1,16 @@
 <?php
 
-namespace nterms\mailqueue\models;
+namespace jako\mailqueue\models;
 
 use Yii;
 use yii\db\ActiveRecord;
-use nterms\mailqueue\MailQueue;
-use nterms\mailqueue\Message;
+use jako\mailqueue\MailQueue;
 
 /**
  * This is the model class for table "{{%mail_queue}}".
  *
  * @property string $subject
+ * @property integer $monitor_id
  * @property integer $created_at
  * @property integer $attempts
  * @property integer $last_attempt_time
@@ -31,19 +31,19 @@ class Queue extends ActiveRecord
     /**
      * @inheritdoc
      */
-	public function behaviors()
-	{
-		return [
-			'timestamp' => [
-				'class' => 'yii\behaviors\TimestampBehavior',
-				'attributes' => [
-					ActiveRecord::EVENT_BEFORE_INSERT => ['created_at'],
-					ActiveRecord::EVENT_BEFORE_UPDATE => ['last_attempt_time'],
-				],
+    public function behaviors()
+    {
+        return [
+            'timestamp' => [
+                'class' => 'yii\behaviors\TimestampBehavior',
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at'],
+                    ActiveRecord::EVENT_BEFORE_UPDATE => ['last_attempt_time'],
+                ],
 				'value' => new \yii\db\Expression('NOW()'),
-			],
-		];
-	}
+            ],
+        ];
+    }
 
     /**
      * @inheritdoc
@@ -57,8 +57,8 @@ class Queue extends ActiveRecord
         ];
     }
 
-	public function toMessage()
-	{
-		return unserialize(base64_decode($this->swift_message));
-	}
+    public function toMessage()
+    {
+        return unserialize(base64_decode($this->swift_message));
+    }
 }

@@ -1,8 +1,8 @@
 {
-	"name": "nterms/yii2-mailqueue",
+	"name": "jako/yii2-mailqueue",
 	"description": "Email queue component for yii2 that works with yii2-swiftmailer.",
 	"keywords": ["yii2", "extension", "component", "email", "queue", "swiftmailer", "yii2-swiftmailer"],
-	"homepage": "https://github.com/nterms/yii2-mailqueue",
+	"homepage": "https://github.com/jako/yii2-mailqueue",
 	"type": "yii2-extension",
 	"license": "MIT",
 	"authors": [
@@ -10,18 +10,23 @@
 			"name": "Saranga Abeykoon",
 			"email": "amisaranga@gmail.com",
 			"homepage": "http://nterms.com/"
+		},
+		{
+			"name": "Thomas Jakobi",
+			"email": "thomas.jakobi@partout.info",
+			"homepage": "https://www.partout.info/"
 		}
 	],
 	"require": {
 		"yiisoft/yii2": "*",
-		"yiisoft/yii2-swiftmailer": "~2.0.0"
+		"yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0"
 	},
 	"autoload": {
 		"psr-4": {
-			"nterms\\mailqueue\\": ""
+			"jako\\mailqueue\\": ""
 		}
 	},
         "extra": {
-            "bootstrap": "nterms\\mailqueue\\Bootstrap"            
+            "bootstrap": "jako\\mailqueue\\Bootstrap"
         }
 }
